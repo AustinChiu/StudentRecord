@@ -29,6 +29,10 @@ public class StudentRecord
     */
    private boolean hasImproved()
    {
+       for(int i =0;i<scores.length;i++){
+           if(scores[i]<scores[i+1])
+            return true;
+        }
       return false; //here so the class compiles
    }  
    
@@ -39,6 +43,12 @@ public class StudentRecord
     */
    public double finalAverage()
    {
-      return 0; //here so the class compiles
+       if(hasImproved()){
+           return average(scores.length/2,scores.length-1);
+        }else{
+            return average(0,scores.length-1);
+        }
+      
+     //here so the class compiles
    } 
 }
